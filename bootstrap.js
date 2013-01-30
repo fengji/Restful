@@ -1,7 +1,7 @@
 Ext.Loader.addClassPathMappings({
   "Restful": "app",
-  "Ext": "../ext/src",
-  "Ext.ux.GroupTreeChunker": "../ext/src/ux/GroupTabPanel.js"
+  "Ext": "ext/src",
+  "Ext.ux.GroupTreeChunker": "ext/src/ux/GroupTabPanel.js"
 });Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.BoxReorderer": [],
   "Ext.ux.grid.filter.Filter": [],
