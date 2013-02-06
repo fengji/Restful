@@ -14,6 +14,9 @@ Ext.define('Restful.view.Viewport', {
         region: 'west',
         xtype: 'panel',
         title: 'west',
+        collapsible: true,
+        animCollapse: true,
+        split: true,
         width: 150
     },{
         region: 'center',
