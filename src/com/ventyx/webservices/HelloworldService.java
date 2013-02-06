@@ -1,6 +1,8 @@
 package com.ventyx.webservices;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MultivaluedMap;
@@ -39,5 +41,17 @@ public class HelloworldService {
 	@Path("hello")
 	public String hello(@MatrixParam("firstname") String firstname, @MatrixParam("lastname") String lastname){
 		return "hello " + firstname + " " + lastname;
+	}
+	
+	@GET
+	@Path("myjson")
+	@Produces("application/json")
+	public Map<String, String> getJSON(){
+		Map<String, String> myjson = new HashMap<String, String>();
+		myjson.put("name1", "value1");
+		myjson.put("name2", "value2");
+		myjson.put("name3", "value3");
+		myjson.put("name4", "value4");
+		return myjson;
 	}
 }
