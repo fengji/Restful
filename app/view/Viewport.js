@@ -12,7 +12,7 @@ Ext.define('Restful.view.Viewport', {
     items: [{
     	region: 'north',
     	xtype: 'container',
-    	id: 'header',
+    	id: 'app-header',
     	layout: {
     		type: 'hbox',
     	    align: 'middle'
@@ -20,18 +20,22 @@ Ext.define('Restful.view.Viewport', {
     	items: [{
     	    xtype: 'image',
     	    src: 'resources/images/Ventyx_logoTM_black.png',
-    	    width: 136,
-    	    height: 40
+    	    width: 170,
+    	    height: 50
     	},{
     		xtype: 'label',
     		html: 'Focal Point',
-    		id: 'productNameLabel'
+    		id: 'product-name'
     	},{
     		flex: 1,
     		xtype: 'container',
     		layout: {
     			type: 'hbox',
-    			pack: 'end'
+    			pack: 'end',
+    			align: 'middle'
+    		},
+    		defaults: {
+    			padding: '5'
     		},
         	items: [{
         		flex: 1,
@@ -43,7 +47,8 @@ Ext.define('Restful.view.Viewport', {
         		margins: '0 50 0 0',
         		bodyStyle: 'background:transparent;',
         		layout: {
-        			type: 'hbox'
+        			type: 'hbox',
+        			align: 'middle'
         		},
         		items: [{
         			xtype: 'textfield',
@@ -51,19 +56,23 @@ Ext.define('Restful.view.Viewport', {
         		},{
         			xtype: 'button',
         			text: 'Search',
-        			id: 'searchButton'
+        			id: 'search-btn'
         		}]
         	},{
         		xtype: 'label',
-        		text: 'John Smith',
-        		padding: '3 5 0 0'
+        		text: 'John Smith'
         	},{
-        		xtype: 'button',
-                text: 'Settings',
-                iconCls:'settings'
+        	    xtype: 'image',
+        	    src: 'resources/images/user_picture.png',
+        	    width: 48,
+        	    height: 48
+        	},{
+        	    xtype: 'image',
+        	    src: 'resources/images/gear.png',
+        	    width: 32,
+        	    height: 32
         	}]
-    	}
-    	]
+    	}]
     },{
         xtype: 'container',
         region: 'center',
