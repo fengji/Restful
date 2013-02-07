@@ -1,3 +1,68 @@
+var optionsStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        expanded: true,
+        children: [{
+        	text: 'Dashboard History',
+        	leaf: true
+        },{
+        	text: 'Published Dashboards',
+        	leaf: true
+        },{
+        	text: 'System Information',
+        	leaf: true
+        },{
+        	text: 'User Dashboards',
+        	leaf: true
+        },{
+        	text: 'User Inbox',
+        	leaf: true
+        },{
+        	text: 'User Options',
+        	leaf: true
+        },{
+        	text: 'User Queries',
+        	leaf: true
+        },{
+        	text: 'User Queries Options',
+        	leaf: true
+        },{
+        	text: 'User Subscriptions',
+        	leaf: true
+        }]
+    }
+});
+
+var favoritesStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        expanded: true,
+        children: [{
+        	text: 'Executive Summary',
+        	leaf: true
+        },{
+        	text: 'Emergency Response',
+        	leaf: true
+        },{
+        	text: 'Current Outages',
+        	leaf: true
+        },{
+        	text: 'Work Backlog',
+        	leaf: true
+        },{
+        	text: 'Work Commitments',
+        	leaf: true
+        },{
+        	text: 'Work Performance',
+        	leaf: true
+        },{
+        	text: 'Work Valume',
+        	leaf: true,
+        },{
+        	text: 'Asset Health Monitor',
+        	leaf: true
+        }]
+    }
+});
+
 var dashboardsStore = Ext.create('Ext.data.TreeStore', {
     root: {
         expanded: true,
@@ -377,6 +442,15 @@ Ext.define('Restful.view.Viewport', {
                 border: false,
             },
             items: [{
+                title:'Favorites',
+                iconCls: 'favorites',
+                items: [{
+                    xtype: 'treepanel',
+                    store: favoritesStore,
+                    rootVisible: false,
+                    border: false
+                }]
+            },{
                 title:'Dashboards',
                 iconCls: 'dashboards',
                 items: [{
@@ -386,11 +460,14 @@ Ext.define('Restful.view.Viewport', {
                     border: false
                 }]
             },{
-                title:'Favorites',
-                iconCls: 'favorites'
-            },{
-                title:'Settings',
-                iconCls: 'settings'
+                title:'Options',
+                iconCls: 'options',
+                items: [{
+                    xtype: 'treepanel',
+                    store: optionsStore,
+                    rootVisible: false,
+                    border: false
+                }]
             }]
         },{
             id: 'app-portal',
