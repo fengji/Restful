@@ -119,6 +119,7 @@ Ext.define('Restful.view.Viewport', {
     	region: "south",
     	xtype: 'panel',
     	collapsible: true,
+    	collapsed: true,
     	title: 'Footer Region',
     	split: true,
     	height: 100
