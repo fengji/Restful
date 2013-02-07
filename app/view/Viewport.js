@@ -28,7 +28,6 @@ Ext.define('Restful.view.Viewport', {
     		id: 'productNameLabel'
     	},{
     		flex: 1,
-    		style: 'text-align:right;padding-right:20px;',
     		xtype: 'container',
     		layout: {
     			type: 'hbox',
