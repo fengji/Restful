@@ -11,18 +11,35 @@ Ext.define('Restful.view.Viewport', {
     },
 
     items: [{
+    	region: 'north',
+    	xtype: 'panel',
+    	title: 'Header',
+    	height: 150
+    },
+            
+    {
         region: 'west',
         xtype: 'panel',
-        title: 'west',
-        collapsible: true,
-        animCollapse: true,
-        split: true,
-        width: 150
-    },{
+        title: 'Navigation',
+        width: 150,
+        split:true,
+        collapsible: true
+    },
+    {
         region: 'center',
         xtype: 'tabpanel',
         items:[{
-            title: 'Center Tab 1'
+            title: 'Dashboard',
+            xtype: 'mainview'	
         }]
+    },
+    {
+    	region: "south",
+    	xtype: 'panel',
+    	collapsible: true,
+    	title: 'Footer Region',
+    	split: true,
+    	height: 100
+    	
     }]
 });
