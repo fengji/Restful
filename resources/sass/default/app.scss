@@ -2,3 +2,28 @@
 @import 'ext4/default/all';
 
 // Your custom code goes here...
+
+#header {
+	border-top: 2px solid black;
+    background: #f1f1f1;
+	border-bottom: 1px solid #b2b6b6;
+}
+
+#productNameLabel {
+	font-size:22px;
+	color: #228B22;
+	border-left: 1px solid #b2b6b6;
+	padding-left:15px;
+}
+
+#searchButton {
+	margin-left:5px;
+	background: #2778F5;
+	color:white;
+	border:1px solid #2778F5;
+}
+
+#searchButton  .x-btn-inner {
+	color:white;
+	font-size:12px;
+}
