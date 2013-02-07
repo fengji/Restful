@@ -1,3 +1,71 @@
+var dashboardsStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        expanded: true,
+        children: [{
+        	text: 'Operations',
+        	expanded: true,
+        	children: [{
+        		text: 'Switch Plans',
+        		expanded: false,
+        		children: [{
+        			text: 'Current Switching',
+        			leaf: true
+        		},{
+        			text: 'Switch Plan Query',
+        			leaf: true
+        		},{
+        			text: 'Tag Query',
+        			leaf: true
+        		},{
+        			text: 'Abnormal Device Query',
+        			leaf: true
+        		},{
+        			text: 'Device Operations Query',
+        			leaf: true
+        		}]
+        	},{
+        		text: 'Outage Management',
+        		expanded: false,
+        		children: [{
+        			text: 'Current Outages',
+        			leaf: true
+        		},{
+        			text: 'Restoration Status',
+        			leaf: true
+        		},{
+        			text: 'Customer Outages',
+        			leaf: true
+        		},{
+        			text: 'ERT Status',
+        			leaf: true
+        		},{
+        			text: 'Customer Query',
+        			leaf: true
+        		},{
+        			text: 'Daily Outage Report',
+        			leaf: true
+        		}]
+        	},{
+        		text: 'Asset Reliability',
+        		expanded: false,
+        		children: [{
+        			text: 'Asset Reliability',
+        			leaf: true
+        		},{
+        			text: 'Work Performing Circuits',
+        			leaf: true
+        		},{
+        			text: 'Outage History Analysis',
+        			leaf: true
+        		},{
+        			text: 'Reliability Analysis',
+        			leaf: true
+        		}]
+        	}]
+        }]
+    }
+});
+
 Ext.define('Restful.view.Viewport', {
     renderTo: Ext.getBody(),
     extend: 'Ext.container.Viewport',
@@ -24,7 +92,7 @@ Ext.define('Restful.view.Viewport', {
     	    height: 50
     	},{
     		xtype: 'label',
-    		html: 'Focal Point',
+    		html: 'FocalPoint',
     		id: 'product-name'
     	},{
     		flex: 1,
@@ -93,20 +161,24 @@ Ext.define('Restful.view.Viewport', {
                 type: 'accordion',
                 animate: true
             },
-            items: [{
-                title:'Favorites',
+            defaults: {
                 autoScroll: true,
                 border: false,
+            },
+            items: [{
+                title:'Dashboards',
+                iconCls: 'dashboards',
+                items: [{
+                    xtype: 'treepanel',
+                    store: dashboardsStore,
+                    rootVisible: false,
+                    border: false
+                }]
+            },{
+                title:'Favorites',
                 iconCls: 'favorites'
             },{
-                title:'Dashboards',
-                border: false,
-                autoScroll: true,
-                iconCls: 'dashboards'
-            },{
                 title:'Settings',
-                border: false,
-                autoScroll: true,
                 iconCls: 'settings'
             }]
         },{
